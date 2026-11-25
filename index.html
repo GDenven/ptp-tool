@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTP Tools</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kalkulator Indeks Entomologi Aedes</h1>
+            <p>Pengiraan pantas untuk Aedes Index, Breteau Index & Container Index</p>
+        </header>
+
+        <!-- input section -->
+        <section class="input-section">
+            <div class="section-title">1. Masukkan Data Pemeriksaan</div>
+            
+            <div class="input-grid">
+                <div class="form-group">
+                    <label for="premisDiperiksa">Jumlah Premis Diperiksa</label>
+                    <input type="number" id="premisDiperiksa" min="0" placeholder="Contoh: 100">
+                </div>
+
+                <div class="form-group">
+                    <label for="premisPositif">Jumlah Premis Positif</label>
+                    <input type="number" id="premisPositif" min="0" placeholder="Contoh: 5">
+                </div>
+
+                <div class="form-group">
+                    <label for="bekasDiperiksa">Jumlah Bekas Diperiksa</label>
+                    <input type="number" id="bekasDiperiksa" min="0" placeholder="Contoh: 250">
+                </div>
+
+                <div class="form-group">
+                    <label for="bekasPositif">Jumlah Bekas Positif</label>
+                    <input type="number" id="bekasPositif" min="0" placeholder="Contoh: 12">
+                </div>
+            </div>
+
+            <p id="warningMsg" class="warning-message"></p>
+
+            <div class="button-group">
+                <button type="button" id="btnKira" class="btn-calculate">Kira Indeks</button>
+                <button type="button" id="btnReset" class="btn-reset">Set Semula</button>
+            </div>
+        </section>
+
+        <!-- output section -->
+        <section class="output-section">
+            <div class="section-title">2. Keputusan Pengiraan</div>
+            
+            <div class="results-grid">
+                <!-- Aedes Index -->
+                <div class="result-card">
+                    <h3>Aedes Index (AI)</h3>
+                    <div class="result-value" id="hasilAI">0.00%</div>
+                    <span class="result-formula">(Jumlah Premis Positif ÷ Jumlah Premis Diperiksa) × 100</span>
+                </div>
+
+                <!-- Breteau Index -->
+                <div class="result-card">
+                    <h3>Breteau Index (BI)</h3>
+                    <div class="result-value" id="hasilBI">0.00</div>
+                    <span class="result-formula">(Jumlah Bekas Positif ÷ Jumlah Premis Diperiksa) × 100</span>
+                </div>
+
+                <!-- Container Index -->
+                <div class="result-card">
+                    <h3>Container Index (CI)</h3>
+                    <div class="result-value" id="hasilCI">0.00%</div>
+                    <span class="result-formula">(Jumlah Bekas Positif ÷ Jumlah Bekas Diperiksa) × 100</span>
+                </div>
+            </div>
+        </section>
+        <footer>
+          <p class="centre">
+            GDenven<br>
+            ©2026 - <span id="current-year"></span>
+          </p>
+        </footer>
+    </div>
+    <script src="./js/calculate.js"></script>
+    <script src="index.js"></script>
+</body>
